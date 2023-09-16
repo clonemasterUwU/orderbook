@@ -22,8 +22,15 @@ const auto stackInfinite = []{
   }
   return 0;
 }();
-int main(){
-  std::string in_file_name = "data/binary/03272019.PSX_ITCH50";
+int main(int argc,char* argv[]){
+  auto print_usage = []() {
+    std::cout << "Usage: ./build/orderbookstat [path-to-input-file]" << std::endl;
+    exit(1);
+  };
+  if (argc < 2) {
+    print_usage();
+  }
+  std::string in_file_name(argv[1]);
   OrderBookStat books(in_file_name);
   books.start();
 }

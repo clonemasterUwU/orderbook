@@ -55,7 +55,7 @@ if __name__ == "__main__":
         urls = urls[:int(sys.argv[1])]
     print("There are {} CPUs on this machine ".format(cpu_count()))
     pool = Pool(cpu_count())
-    download_func = partial(download_zip, file_path=file_path)
+    download_func = partial(download_zip, data_path=file_path)
     results = pool.map(download_func, urls)
     pool.close()
     pool.join()
