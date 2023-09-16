@@ -19,9 +19,21 @@ const auto stackInfinite = [] {
   }
   return 0;
 }();
-int main() {
-  std::string in_file_name = "data/binary/03272019.PSX_ITCH50";
-  std::string out_file_name = "data/binary/03272019.PSX_ITCH50.csv";
-  OrderBookAggregatePriceVolumeCSV books(in_file_name, out_file_name, 1);
-  books.start();
-}
+int main(int argc, char *argv[]) {
+  auto print_usage = []() {
+    std::cout << "Usage: ./build/orderbookaggregate [path-to-input-file] [depth_lvl]" << std::endl;
+    exit(1);
+  };
+  if (argc < 3) {
+    print_usage();
+    std::string in_file_name(argv[1]), lvl_depth(argv[2]);
+    u32 depth;
+    try {
+      depth = std::stoi(lvl_depth);
+    } catch (std::invalid_argument &e) {
+      print_usage();
+    }
+    std::string out_file_name = in_file_name + "csv";
+    OrderBookAggregatePriceVolumeCSV books(in_file_name, out_file_name, depth);
+    books.start();
+  }

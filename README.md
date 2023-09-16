@@ -52,8 +52,8 @@ The "orderbooksimulator" target runs a command line visualizer:
 The "orderbookaggregate" target consolidates price-volume data for every ticker to a csv file:
 
 ```bash
-#Usage ./build/orderbookaggregate [path-to-input-file]
-./build/orderbookaggregate ./data/20181228.BX_ITCH_50
+#Usage: ./build/orderbookaggregate [path-to-input-file] [depth_lvl]
+./build/orderbookaggregate ./data/20181228.BX_ITCH_50 3
 ```
 
 The "orderbookstat" target collects data metric (mean, std, ...) of the number of order per order type, the executed price, ...
