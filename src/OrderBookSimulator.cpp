@@ -1,10 +1,15 @@
 #include <string>
 #include "OrderBookSimulator.h"
 
-int main() {
-    std::string in_file_name = "data/binary/03272019.PSX_ITCH50";
-    std::string stock = "MSFT";
-    OrderBookSimulator book(in_file_name,stock);
-    book.start();
-//  std::cout << "\x1b[38;5;220m" << "AAPL\0";
+int main(int argc, char *argv[]) {
+  auto print_usage = []() {
+    std::cout << "Usage: ./build/orderbooksimulator [path-to-input-file] [ticker]" << std::endl;
+    exit(1);
+  };
+  if (argc < 3) {
+    print_usage();
+  }
+  std::string in_file_name(argv[1]),stock(argv[2]);
+  OrderBookSimulator book(in_file_name, stock);
+  book.start();
 }
