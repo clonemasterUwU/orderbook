@@ -47,7 +47,7 @@ The "orderbooksimulator" target runs a command line visualizer:
 ./build/orderbooksimulator ./data/20181228.BX_ITCH_50 MSFT
 ```
 
-![](https://github.com/clonemasterUwU/orderbook/tree/misc/demo.gif)
+![](https://github.com/clonemasterUwU/orderbook/blob/misc/demo.gif)
 
 The "orderbookaggregate" target consolidates price-volume data for every ticker to a csv file:
 
