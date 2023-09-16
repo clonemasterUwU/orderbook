@@ -1,0 +1,4 @@
+build/
+*.gif
+.idea/
+cmake-build-*/
