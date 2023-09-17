@@ -25,7 +25,7 @@ public:
   }
 
   void write_header() {
-    _out_file << "ticker,timestamp";
+    _out_file << "timestamp,ticker,";
     for (u16 i = 1; i <= _depth; i++)
       _out_file << ",bid_price_" << i << ",bid_vol_" << i;
     for (u16 i = 1; i <= _depth; i++)
