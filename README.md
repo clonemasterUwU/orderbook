@@ -55,6 +55,7 @@ The "orderbookaggregate" target consolidates price-volume data for every ticker 
 #Usage: ./build/orderbookaggregate [path-to-input-file] [depth_lvl]
 ./build/orderbookaggregate ./data/20181228.BX_ITCH_50 3
 ```
+![](https://github.com/clonemasterUwU/orderbook/blob/misc/agg.png)
 
 The "orderbookstat" target collects data metric (mean, std, ...) of the number of order per order type, the executed price, ...
 for each ticker:
@@ -63,3 +64,5 @@ for each ticker:
 #Usage ./build/orderbookstat [path-to-input-file]
 ./build/orderbookstat ./data/20181228.BX_ITCH_50
 ```
+
+![](https://github.com/clonemasterUwU/orderbook/blob/misc/stat.png)
